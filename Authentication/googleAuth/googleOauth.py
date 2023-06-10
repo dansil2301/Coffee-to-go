@@ -1,4 +1,5 @@
 import json
+import os
 from flask import Flask, render_template, jsonify, request
 
 app = Flask("Google Login App")
@@ -24,6 +25,12 @@ def save_user_inf():
         json.dump(user_inf, user)
 
     return jsonify({"success": True})
+
+
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    os.kill(os.getpid(), 9)
+    return 'Server shutting down...'
 
 
 @app.route("/callback")

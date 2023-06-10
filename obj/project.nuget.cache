@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q85gagV7uzdx7XqPblYoai6PO90OIVCmMdCEQhazw6YgPjGYsVnh6hMaiwUlWIfPnXsxp1kGTtg17cPR7fHtHw==",
+  "dgSpecHash": "O/KrmgYpy51SZYieY11oSdu1Y/HrX46oEMc8SwybRsgHu9JyweDKlRhrKRu7TB0OCXl+28vx3EAG7yw30b8DAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dansil2301\\source\\repos\\Coffee to go\\Coffee to go\\Coffee to go.csproj",
+  "projectFilePath": "C:\\Users\\dansil2301\\source\\repos\\Coffee-to-go\\Coffee-to-go.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dansil2301\\.nuget\\packages\\firebaseauthentication.net\\4.0.2\\firebaseauthentication.net.4.0.2.nupkg.sha512",
     "C:\\Users\\dansil2301\\.nuget\\packages\\firebaseauthentication.wpf\\4.0.2\\firebaseauthentication.wpf.4.0.2.nupkg.sha512",

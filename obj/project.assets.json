@@ -6415,11 +6415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dansil2301\\source\\repos\\Coffee to go\\Coffee to go\\Coffee to go.csproj",
-      "projectName": "Coffee to go",
-      "projectPath": "C:\\Users\\dansil2301\\source\\repos\\Coffee to go\\Coffee to go\\Coffee to go.csproj",
+      "projectUniqueName": "C:\\Users\\dansil2301\\source\\repos\\Coffee-to-go\\Coffee-to-go.csproj",
+      "projectName": "Coffee-to-go",
+      "projectPath": "C:\\Users\\dansil2301\\source\\repos\\Coffee-to-go\\Coffee-to-go.csproj",
       "packagesPath": "C:\\Users\\dansil2301\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dansil2301\\source\\repos\\Coffee to go\\Coffee to go\\obj\\",
+      "outputPath": "C:\\Users\\dansil2301\\source\\repos\\Coffee-to-go\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
