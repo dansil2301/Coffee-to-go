@@ -1,0 +1,65 @@
+﻿<Window x:Class="Coffee_to_go.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coffee_to_go"
+        mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
+        Title="LoginWindow" Height="450" Width="800">
+
+
+
+    <Border Style="{StaticResource MyBorderStyle}">
+        <Grid>
+            <TextBlock Text="Login" HorizontalAlignment="Center" Margin="0,0,0,150" FontSize="40" Height="100" Width="100"/>
+
+            <Button x:Name="BtnClose"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="top"
+                    Margin="10"
+                    Style="{StaticResource CloseButtonStyle}"/>
+
+            <Button Height="50" Width="200" x:Name="googleAuthBtn" FontSize="15" Click="google_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="buttonBorder" Background="AliceBlue" BorderThickness="1" CornerRadius="10">
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="buttonImg/GoogleLogo.png" Width="32" Height="32" />
+                                    <TextBlock Text="Sign in with Google" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="buttonBorder" Property="Background" Value="#FFE8E8E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Margin="0,150,0,0" Height="50" Width="200" x:Name="emailAuthBtn" FontSize="15" Click="email_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="buttonBorderEmail" Background="AliceBlue" BorderThickness="1" CornerRadius="10">
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Margin="0,0,8,0" Source="buttonImg/EmailLogo.png" Width="32" Height="32" />
+                                    <TextBlock Text="Sign in with Email" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="buttonBorderEmail" Property="Background" Value="#FFE8E8E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+    </Border>
+</Window>

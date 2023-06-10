@@ -20,12 +20,9 @@ namespace Coffee_to_go
     /// </summary>
     public partial class MainWindow : Window
     {
-        GoogleAuth googleAuth = new GoogleAuth();
-
         public MainWindow()
         {
             InitializeComponent();
-            googleAuth.getUser();
         }
     }
 }

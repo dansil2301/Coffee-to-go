@@ -18,20 +18,6 @@ namespace Coffee_to_go
     {
         public App()
         {
-            FirebaseUI.Initialize(new FirebaseUIConfig
-            {
-                ApiKey = "AIzaSyAktAewDe5azdwg03cBLDMI7g3w9Ar8Hhk",
-                AuthDomain = "coffee-to-go-fontys.firebaseapp.com",
-                Providers = new FirebaseAuthProvider[]
-                {
-                    new GoogleProvider(),
-                    new EmailProvider()
-                },
-                PrivacyPolicyUrl = "https://github.com/step-up-labs/firebase-authentication-dotnet",
-                TermsOfServiceUrl = "https://github.com/step-up-labs/firebase-database-dotnet",
-                IsAnonymousAllowed = false,
-                UserRepository = new FileUserRepository("coffee go")
-            });
         }
     }
 }

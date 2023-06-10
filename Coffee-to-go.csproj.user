@@ -7,6 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Authentication\EmailSignIn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Authentication\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Authentication\EmailSignIn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Authentication\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CommonStyle\WindowStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

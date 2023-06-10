@@ -9,6 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Authentication\buttonImg\EmailLogo.png" />
+    <None Remove="Authentication\buttonImg\GoogleLogo.png" />
+    <None Remove="CommonStyle\controlImg\close.png" />
+    <None Remove="CommonStyle\controlImg\closeHover.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Authentication\buttonImg\EmailLogo.png" />
+    <Resource Include="CommonStyle\controlImg\closeHover.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="CommonStyle\controlImg\close.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FirebaseAuthentication.WPF" Version="4.0.2" />
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="PuppeteerSharp" Version="10.0.0" />
@@ -17,6 +33,10 @@
 
   <ItemGroup>
     <Folder Include="Authentication\current_user\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Authentication\buttonImg\GoogleLogo.png" />
   </ItemGroup>
 
 </Project>

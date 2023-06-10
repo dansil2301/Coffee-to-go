@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Coffee_to_go"
         mc:Ignorable="d"
+        Style="{StaticResource WindowStyle}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+    <Border Style="{StaticResource MyBorderStyle}">
+        <Grid>
+            <Button x:Name="BtnClose"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="top"
+                    Margin="10"
+                    Style="{StaticResource CloseButtonStyle}"/>
+            
+            
+        </Grid>
+    </Border>
 </Window>

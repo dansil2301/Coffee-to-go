@@ -84,3 +84,10 @@ C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\refint\Co
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.pdb
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.genruntimeconfig.cache
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\ref\Coffee-to-go.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\LoginWindow.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\LoginWindow.baml
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\CommonStyle\WindowStyle.baml
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\App.baml
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\CommonStyle\WindowStyle.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\EmailSignIn.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\EmailSignIn.baml

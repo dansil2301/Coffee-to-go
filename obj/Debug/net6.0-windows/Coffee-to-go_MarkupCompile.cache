@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\dansil2301\source\repos\Coffee-to-go\App.xaml
-11407045341
+471487484
 
-4889588591
+10-1131521388
 215-295284401
-MainWindow.xaml;
+Authentication\EmailSignIn.xaml;Authentication\LoginWindow.xaml;CommonStyle\WindowStyle.xaml;MainWindow.xaml;
 
 False
 

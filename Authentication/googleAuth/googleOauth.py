@@ -21,7 +21,7 @@ def save_user_inf():
     display_name = request.form["displayName"]
 
     with open("../current_user/current_user.json", "w") as user:
-        user_inf = {"id": user_id, "email": email, display_name: "displayName"}
+        user_inf = {"id": user_id, "email": email, "displayName": display_name}
         json.dump(user_inf, user)
 
     return jsonify({"success": True})
