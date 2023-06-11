@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Coffee_to_go"
         mc:Ignorable="d"
+        Icon="buttonImg/AccEnter.png"
         Style="{StaticResource WindowStyle}"
         Title="EmailSignIn" Height="450" Width="800">
 

@@ -34,6 +34,7 @@ namespace Coffee_to_go
         private void redirectToMain()
         {
             Window main = new MainWindow();
+            main.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             main.Show();
             this.Close();
         }
@@ -60,6 +61,7 @@ namespace Coffee_to_go
         private void email_Click(object sender, RoutedEventArgs e)
         {
             Window emailSignIn = new EmailSignIn();
+            emailSignIn.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             emailSignIn.Show();
             this.Close();
         }

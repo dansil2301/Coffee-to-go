@@ -59,7 +59,7 @@ namespace Coffee_to_go {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

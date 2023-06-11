@@ -52,7 +52,7 @@ namespace Coffee_to_go {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;V1.0.0.0;component/commonstyle/windowstyle.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;component/commonstyle/windowstyle.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\CommonStyle\WindowStyle.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

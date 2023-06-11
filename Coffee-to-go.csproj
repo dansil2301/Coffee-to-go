@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Authentication\buttonImg\AccEnter.png" />
     <None Remove="Authentication\buttonImg\EmailLogo.png" />
     <None Remove="Authentication\buttonImg\GoogleLogo.png" />
     <None Remove="CommonStyle\controlImg\close.png" />
@@ -16,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Authentication\buttonImg\AccEnter.png" />
     <Resource Include="Authentication\buttonImg\EmailLogo.png" />
     <Resource Include="CommonStyle\controlImg\closeHover.png" />
   </ItemGroup>
@@ -26,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="FirebaseAuthentication.WPF" Version="4.0.2" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
     <PackageReference Include="Nancy" Version="2.0.0" />
     <PackageReference Include="PuppeteerSharp" Version="10.0.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.10.0" />

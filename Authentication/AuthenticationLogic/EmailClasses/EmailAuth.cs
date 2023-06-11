@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nancy.Cryptography;
+using System.IO;
 
 namespace Coffee_to_go.Authentication.AuthenticationLogic
 {
     internal class EmailAuth
     {
-        SaveUserCred SaveUserCred = new SaveUserCred();
+        CurrentUserFIleWork SaveUserCred = new CurrentUserFIleWork();
         FirebaseAuthClient client;
 
         public EmailAuth() 
@@ -38,16 +39,21 @@ namespace Coffee_to_go.Authentication.AuthenticationLogic
             return false;
         }
 
-        public async void createUserAndSaveCred(string email, string password, string displayName)
+        public async Task createUserAndSaveCred(string email, string password, string displayName)
         {
             var user = await client.CreateUserWithEmailAndPasswordAsync(email, password, displayName);
-            SaveUserCred.saveUser(user.User.Uid, email, displayName);
+            SaveUserCred.SaveUser(user.User.Uid, email, displayName);
         }
 
-        public async void FindUserAndSaveCred(string email, string password)
+        public async Task FindUserAndSaveCred(string email, string password)
         {
-            var user = await client.SignInWithEmailAndPasswordAsync(email, password);
-            SaveUserCred.saveUser(user.User.Uid, email, user.User.Info.DisplayName);
+            try
+            {
+                var user = await client.SignInWithEmailAndPasswordAsync(email, password);
+                SaveUserCred.SaveUser(user.User.Uid, email, user.User.Info.DisplayName);
+            }
+            catch
+            { throw new IOException("Wrong password"); }
         }
     }
 }

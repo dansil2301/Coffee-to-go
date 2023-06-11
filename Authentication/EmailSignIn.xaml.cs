@@ -30,6 +30,7 @@ namespace Coffee_to_go
         private void redirectToMain()
         {
             Window main = new MainWindow();
+            main.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             main.Show();
             this.Close();
         }
@@ -48,14 +49,18 @@ namespace Coffee_to_go
                 signInGrid.Visibility = Visibility.Visible;
                 registerGrid.Visibility = Visibility.Hidden;
 
-                emailAuth.FindUserAndSaveCred(emailTxtBx.Text, passwordTxtBx.Password);
-                redirectToMain();
+                try
+                {
+                    await emailAuth.FindUserAndSaveCred(emailTxtBx.Text, passwordTxtBx.Password);
+                    redirectToMain();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
 
-        private void signUp_Click(object sender, RoutedEventArgs e)
+        private async void signUp_Click(object sender, RoutedEventArgs e)
         {
-            emailAuth.createUserAndSaveCred(regEmailTxtBx.Text, regPasswordTxtBx.Password, regNameTxtBx.Text);
+            await emailAuth.createUserAndSaveCred(regEmailTxtBx.Text, regPasswordTxtBx.Password, regNameTxtBx.Text);
             redirectToMain();
         }
     }

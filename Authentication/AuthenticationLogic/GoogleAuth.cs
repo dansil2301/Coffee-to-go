@@ -47,7 +47,7 @@ namespace Coffee_to_go
 
             process.WaitForExit();
 
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(4000);
             stopFlaskServer();
         }
 

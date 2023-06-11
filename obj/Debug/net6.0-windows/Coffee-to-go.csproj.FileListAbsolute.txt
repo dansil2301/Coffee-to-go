@@ -91,3 +91,7 @@ C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\App.baml
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\CommonStyle\WindowStyle.g.cs
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\EmailSignIn.g.cs
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Authentication\EmailSignIn.baml
+C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\ControlzEx.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\MahApps.Metro.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll

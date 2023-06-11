@@ -18,6 +18,14 @@ class FirebaseGoogleAuth
     analytics = getAnalytics(this.app);
     provider = new GoogleAuthProvider();
 
+    constructor() {
+        this.provider.addScope('profile');
+        this.provider.addScope('email');
+        this.provider.setCustomParameters({
+            prompt: 'select_account'
+        });
+    }
+
     googleSignIn = function () {
         const auth = getAuth();
         signInWithRedirect(auth, this.provider);
