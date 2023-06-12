@@ -68,11 +68,9 @@ C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\runtimes\
 C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.csproj.AssemblyReference.cache
-C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go_MarkupCompile.cache
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go_MarkupCompile.lref
-C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.g.resources
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.AssemblyInfoInputs.cache
@@ -95,3 +93,7 @@ C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\ControlzE
 C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\MahApps.Metro.dll
 C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\dansil2301\source\repos\Coffee-to-go\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\GetVoucherWindow.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\MainWindow.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\GetVoucherWindow.baml
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\MainWindow.baml

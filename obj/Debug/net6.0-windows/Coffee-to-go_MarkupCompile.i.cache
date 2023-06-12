@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\dansil2301\source\repos\Coffee-to-go\App.xaml
-471487484
+6-772293357
 
-181184558284
+23287164235
 218-989109101
-Authentication\EmailSignIn.xaml;Authentication\LoginWindow.xaml;CommonStyle\WindowStyle.xaml;MainWindow.xaml;
+Authentication\EmailSignIn.xaml;Authentication\LoginWindow.xaml;CommonStyle\WindowStyle.xaml;MainUI\GetVoucherWindow.xaml;MainUI\MainWindow.xaml;MainUI\UseVoucherWindow.xaml;
 
 True
 

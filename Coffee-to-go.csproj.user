@@ -13,6 +13,12 @@
     <Compile Update="Authentication\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MainUI\GetVoucherWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainUI\UseVoucherWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Authentication\EmailSignIn.xaml">
@@ -24,7 +30,13 @@
     <Page Update="CommonStyle\WindowStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="MainUI\GetVoucherWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainUI\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainUI\UseVoucherWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 namespace Coffee_to_go
 {
     [Serializable]
-    internal class User
+    public class User
     {
         public string id { private set; get; }
         public string name { private set; get; }
         public string email { private set; get; }
+        public string voucherType;
+        public Dictionary<string, string> voucher = new Dictionary<string, string>();
+
         private int currentStreak = 0;
         private List<CoffeeInf> history = new List<CoffeeInf>();
 
@@ -29,16 +32,17 @@ namespace Coffee_to_go
         public void addHistory(CoffeeInf coffee)
         {
             history.Add(coffee);
-            AddStreak();
+            if (voucher.Count == 0)
+            { AddStreak(); }
         }
 
-        public void AddStreak()
+        private void AddStreak()
         {
             if (currentStreak < 10)
                 currentStreak++;
         }
 
-        public void Streak()
+        public void ResetStreak()
         {
             currentStreak = 0;
         }
