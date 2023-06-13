@@ -127,7 +127,22 @@ namespace Coffee_to_go
 
         private void payWithVoucher_Click(object sender, RoutedEventArgs e)
         {
-            
+            UseVoucherWindow confirm = new UseVoucherWindow(user);
+            confirm.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            confirm.ShowDialog();
+
+            switch (confirm.GetInf)
+            {
+                case "accepted":
+                    coffeeManager.addHistoryItem(user, user.voucher["size"], user.voucher["type"], user.voucher["special"], user.voucher["extras"], true);
+                    MessageBox.Show($"You will get {user.voucher["size"]}, {user.voucher["type"]} coffee");
+                    user.voucherType = "";
+                    user.voucher = new Dictionary<string, string>();
+                    break;
+            }
+
+            userManager.changeUser(user);
+            showHistory();
         }
 
         private void showStreak()
@@ -171,7 +186,10 @@ namespace Coffee_to_go
 
             foreach (var item in user.GetHistory)
             {
-                historyItems.Add($"type: {item.type}, Size: {item.size[0]}, Special: {item.special}, Extra: {item.extras} ({item.price})");
+                if (!item.voucherPay)
+                { historyItems.Add($"type: {item.type}, Size: {item.size[0]}, Special: {item.special}, Extra: {item.extras} ({item.price})"); }
+                else
+                { historyItems.Add($"type: {item.type}, Size: {item.size[0]}, Special: {item.special}, Extra: {item.extras} (Free)"); }
             }
         }
 

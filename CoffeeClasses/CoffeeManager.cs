@@ -30,6 +30,7 @@ namespace Coffee_to_go
             coffee.special = specialIn;
             coffee.extras = extrasIn;
             coffee.size = sizeIn;
+            coffee.voucherPay = voucherPayIn;
             coffee.price = countSumToPay(sizeIn, typeIn, specialIn, extrasIn);
 
             globalCoffeeHistrory.addCoffeeToHistory(coffee);

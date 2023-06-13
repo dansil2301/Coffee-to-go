@@ -19,9 +19,44 @@ namespace Coffee_to_go
     /// </summary>
     public partial class UseVoucherWindow : Window
     {
-        public UseVoucherWindow()
+        public string GetInf;
+
+        public UseVoucherWindow(User user)
         {
             InitializeComponent();
+
+
+            GetInf = "";
+            voucherText.Text = $"Your {user.voucherType} voucher will be used";
+
+            if (user.voucherType == "")
+            {
+                NoVoucherGrid.Visibility = Visibility.Visible;
+                ConfirmGrid.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                NoVoucherGrid.Visibility = Visibility.Hidden;
+                ConfirmGrid.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void accept_Click(object sender, RoutedEventArgs e)
+        {
+            GetInf = "accepted";
+            Close();
+        }
+
+        private void decline_Click(object sender, RoutedEventArgs e)
+        {
+            GetInf = "decline";
+            Close();
+        }
+
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            GetInf = "ok";
+            Close();
         }
     }
 }

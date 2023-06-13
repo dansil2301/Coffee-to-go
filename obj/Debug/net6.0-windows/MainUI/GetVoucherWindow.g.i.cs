@@ -101,7 +101,7 @@ namespace Coffee_to_go {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;V1.0.0.0;component/mainui/getvoucherwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Coffee-to-go;component/mainui/getvoucherwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\MainUI\GetVoucherWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

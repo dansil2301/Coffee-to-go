@@ -31,7 +31,7 @@ namespace Coffee_to_go
 
         public void addHistory(CoffeeInf coffee)
         {
-            history.Add(coffee);
+            history.Insert(0, coffee);
             if (voucher.Count == 0)
             { AddStreak(); }
         }

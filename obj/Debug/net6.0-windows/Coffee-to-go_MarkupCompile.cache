@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\
+C:\UrMom\Coffee-to-go\obj\Debug\net6.0-windows\
 Coffee_to_go
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\dansil2301\source\repos\Coffee-to-go\App.xaml
-5-858547779
+C:\UrMom\Coffee-to-go\App.xaml
+6-772293357
 
-20964035820
-218-989109101
-Authentication\EmailSignIn.xaml;Authentication\LoginWindow.xaml;CommonStyle\WindowStyle.xaml;MainUI\GetVoucherWindow.xaml;MainUI\MainWindow.xaml;
+21915828443
+218482807563
+Authentication\EmailSignIn.xaml;Authentication\LoginWindow.xaml;CommonStyle\WindowStyle.xaml;MainUI\GetVoucherWindow.xaml;MainUI\MainWindow.xaml;MainUI\UseVoucherWindow.xaml;
 
 False
 
