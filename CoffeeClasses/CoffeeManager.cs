@@ -31,10 +31,73 @@ namespace Coffee_to_go
             coffee.extras = extrasIn;
             coffee.size = sizeIn;
             coffee.voucherPay = voucherPayIn;
+            coffee.buyTime = DateTime.Now;
             coffee.price = countSumToPay(sizeIn, typeIn, specialIn, extrasIn);
 
             globalCoffeeHistrory.addCoffeeToHistory(coffee);
             user.addHistory(coffee);
+        }
+
+        public List<CoffeeInf> GetCoffeeHistory()
+        {
+            return globalCoffeeHistrory.getCoffeeHistory();
+        }
+
+        public double GetUserTotal(User user)
+        {
+            double total = 0;
+
+            foreach (var item in user.GetHistory)
+            {
+                if (!item.voucherPay)
+                { total += item.price; }
+            }
+
+            return total;
+        }
+
+        public double GetUserTotalMonth(User user)
+        {
+            double total = 0;
+            var now = DateTime.Now;
+
+            foreach (var item in user.GetHistory)
+            {
+                if (now.Month == item.buyTime.Month && !item.voucherPay)
+                { total += item.price; }
+            }
+
+            return total;
+        }
+
+        public double GetAllTotal()
+        {
+            double total = 0;
+            var all = globalCoffeeHistrory.getCoffeeHistory();
+
+            foreach (var item in all)
+            {
+                if (!item.voucherPay)
+                { total += item.price; }
+            }
+
+            return total;
+        }
+
+        public double GetAllTotalMonth()
+        {
+            double total = 0;
+            var now = DateTime.Now;
+            var all = globalCoffeeHistrory.getCoffeeHistory();
+
+            foreach (var item in all)
+            {
+
+                if (now.Month == item.buyTime.Month && !item.voucherPay)
+                { total += item.price; }
+            }
+
+            return total;
         }
     }
 }

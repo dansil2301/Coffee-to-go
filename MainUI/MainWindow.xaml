@@ -89,10 +89,30 @@
                     </Button.Template>
                 </Button>
 
+                <Button Height="40" Width="100" x:Name="AdminBtn" FontSize="15" Click="admin_Click"
+                        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,20,0,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="buttonBorder" Background="AliceBlue" BorderThickness="1" CornerRadius="10">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Admin" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="buttonBorder" Property="Background" Value="#FFE8E8E8" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
             </StackPanel>
 
             <Grid x:Name="Account" HorizontalAlignment="Right"  VerticalAlignment="Bottom"
-                  Width="666" Height="366" Visibility="Hidden">
+                  Width="666" Height="366" Visibility="Visible">
                 <Button Height="30" Width="70" Content="Sign out" x:Name="signOut"
                             Margin="580,-320,0,0" FontSize="15" Click="exit_Click">
                     <Button.Template>
@@ -387,7 +407,7 @@
             </Grid>
 
             <Grid x:Name="History" HorizontalAlignment="Right"  VerticalAlignment="Bottom"
-                  Width="666" Height="366" Visibility="Visible">
+                  Width="666" Height="366" Visibility="Hidden">
 
                 <Border BorderThickness="0,0,0,0" BorderBrush="Gray" Opacity="1">
                     <ListBox x:Name="historyItemsLstBx" ItemsSource="{Binding historyItems}"
@@ -420,6 +440,124 @@
                         </ListBox.ItemContainerStyle>
                     </ListBox>
                 </Border>
+
+            </Grid>
+
+            <Grid x:Name="Admin" HorizontalAlignment="Right"  VerticalAlignment="Bottom"
+                  Width="666" Height="366" Visibility="Hidden">
+
+                <Border BorderThickness="0,0,0,0" BorderBrush="Gray" Opacity="1">
+                    <ListBox x:Name="historyAdminItemsLstBx" ItemsSource="{Binding historyAdminItems}"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                     PreviewMouseDown="PreventDef" Background="Transparent" Height="250">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" FontSize="20" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <Border x:Name="borderHistory" CornerRadius="10" BorderThickness="1" Margin="5" Padding="5"
+                                                            Background="AliceBlue" Width="580" Height="40">
+                                                <ContentPresenter/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="borderHistory" Property="Background" Value="AliceBlue"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </Border>
+
+                <GridSplitter HorizontalAlignment="Center" Height="2" Margin="0,250,0,0" 
+                          VerticalAlignment="Top" Width="798" Background="AntiqueWhite"
+                          Opacity="0.50"/>
+
+                <TextBlock Text="Select user to show history:" HorizontalAlignment="Left" 
+                            VerticalAlignment="Bottom" Margin="32,0,0,85"/>
+                <ListBox Width="150" Height="50" HorizontalAlignment="Left" 
+                         VerticalAlignment="Bottom" Margin="30,0,0,30" x:Name="usersLstBx" SelectionChanged="usersLstBx_SelectionChanged"/>
+
+                <StackPanel Width="150" Height="50" HorizontalAlignment="Center" 
+                            VerticalAlignment="Bottom" Margin="0,0,0,30">
+                    <TextBlock Text="Amount: 0" HorizontalAlignment="Center" FontSize="15" x:Name="AdminTotal"/>
+                    <TextBlock Text="This month: 0" HorizontalAlignment="Center" FontSize="15" Margin="9" x:Name="AdminMonth"/>
+                </StackPanel>
+
+                <TextBlock Text="Set voucher:" HorizontalAlignment="Right" 
+                            VerticalAlignment="Bottom" Margin="0,0,70,85"/>
+                <ListBox Width="150" Height="30" HorizontalAlignment="Right" 
+                         VerticalAlignment="Bottom" Margin="0,0,30,50" x:Name="BestCustomers"/>
+
+                <Button Margin="0,0,135,10" Height="30" Width="55" FontSize="15" Click="setBronze_Click"
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="buttonBorderEmail" Background="#FFFFA73B" BorderThickness="1" CornerRadius="10">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Bronze" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="buttonBorderEmail" Property="Background" Value="#FF675225" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Margin="0,0,75,10" Height="30" Width="55" FontSize="15" Click="setSilver_Click"
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="buttonBorderEmail" Background="#FFF5F2EB" BorderThickness="1" CornerRadius="10">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Silver" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="buttonBorderEmail" Property="Background" Value="#FFBDBABA" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Margin="0,0,15,10" Height="30" Width="55" FontSize="15" Click="setGold_Click"
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="buttonBorderEmail" Background="#FFFFEB66" BorderThickness="1" CornerRadius="10">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Gold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="buttonBorderEmail" Property="Background" Value="#FFA5A135" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
 
             </Grid>
 

@@ -32,24 +32,33 @@ namespace Coffee_to_go
         private User user;
 
         public ObservableCollection<string> historyItems { set; get; }
+        public ObservableCollection<string> historyAdminItems { set; get; }
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
-            userManager.refreshUsers(); //uncomment if user class has changed
+            //userManager.refreshUsers(); //uncomment if user class has changed
 
             var data = currentUserFIleWork.GetUser();
             user = new User(data.id, data.displayName, data.email);
             userManager.AddUser(user);
             user = userManager.refeshCurrentUser(user);
 
+            if (user.admin)
+            { AdminBtn.Visibility = Visibility.Visible; }
+            else { AdminBtn.Visibility = Visibility.Hidden; }
+
             historyItems = new ObservableCollection<string>();
+            historyAdminItems = new ObservableCollection<string>();
 
             setUserInf();
             setCoffeeInf();
             showHistory();
             showStreak();
+            setAdminUsersLstBox();
+            setTopUsersLstBox();
+            setAllHistory();
         }
 
         private void showGridHideOthers(string name)
@@ -100,6 +109,7 @@ namespace Coffee_to_go
                     break;
             }
             userManager.changeUser(user);
+            setAdminUsersLstBox();
 
             showStreak();
         }
@@ -142,6 +152,7 @@ namespace Coffee_to_go
             }
 
             userManager.changeUser(user);
+            setAdminUsersLstBox();
             showHistory();
         }
 
@@ -162,6 +173,7 @@ namespace Coffee_to_go
 
                 coffeeManager.addHistoryItem(user, size, type, special, extra, false);
                 userManager.changeUser(user);
+                setAdminUsersLstBox();
 
                 showStreak();
             }
@@ -202,6 +214,99 @@ namespace Coffee_to_go
         private void PreventDef(object sender, MouseButtonEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void setAdminUsersLstBox()
+        {
+            usersLstBx.Items.Clear();
+
+            usersLstBx.Items.Add("All");
+            foreach (var userIter in userManager.GetUserList())
+            {
+                usersLstBx.Items.Add(userIter);
+            }
+        }
+
+        private void setTopUsersLstBox()
+        {
+            BestCustomers.Items.Clear();
+
+            foreach (var userIter in userManager.GetTopTenUsers())
+            {
+                BestCustomers.Items.Add(userIter);
+            }
+        }
+
+        private void setAllHistory()
+        {
+            var allHistory = coffeeManager.GetCoffeeHistory();
+            historyAdminItems.Clear();
+
+            foreach (var item in allHistory)
+            {
+                if (!item.voucherPay)
+                { historyAdminItems.Add($"user: {userManager.FindUserById(item.userId).email}, type: {item.type}, Size: {item.size[0]} ({item.price})"); }
+                else
+                { historyAdminItems.Add($"user: {userManager.FindUserById(item.userId).email} type: {item.type}, Size: {item.size[0]} (Free)"); }
+            }
+        }
+
+        private void setHistoryInAdmin(User userIn)
+        {
+            historyAdminItems.Clear();
+
+            foreach (var item in userIn.GetHistory)
+            {
+                if (!item.voucherPay)
+                { historyAdminItems.Add($"type: {item.type}, Size: {item.size[0]}, Special: {item.special}, Extra: {item.extras} ({item.price})"); }
+                else
+                { historyAdminItems.Add($"type: {item.type}, Size: {item.size[0]}, Special: {item.special}, Extra: {item.extras} (Free)"); }
+            }
+        }
+
+        private void usersLstBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (usersLstBx.SelectedItem == null)
+            { setAllHistory(); return; }
+
+            if (usersLstBx.SelectedItem.ToString() == "All")
+            { setAllHistory(); return; }
+
+            setHistoryInAdmin((User)usersLstBx.SelectedItem);
+        }
+
+        private void admin_Click(object sender, RoutedEventArgs e)
+        {
+            showGridHideOthers("Admin");
+            SelectedTab.Text = "Admin";
+        }
+
+        private void voucherGive(string voucherType)
+        {
+            if (BestCustomers.SelectedItem == null)
+            { return; }
+
+            var hereUser = (User)BestCustomers.SelectedItem;
+            voucherGenerator.SetVaucher(hereUser, voucherType);
+            userManager.changeUser(hereUser);
+            user = userManager.refeshCurrentUser(user);
+
+            MessageBox.Show($"{hereUser.email} was give a {hereUser.voucherType} voucher");
+        }
+
+        private void setBronze_Click(object sender, RoutedEventArgs e)
+        {
+            voucherGive("Bronze");
+        }
+
+        private void setSilver_Click(object sender, RoutedEventArgs e)
+        {
+            voucherGive("Silver");
+        }
+
+        private void setGold_Click(object sender, RoutedEventArgs e)
+        {
+            voucherGive("Gold");
         }
     }
 }

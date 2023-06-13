@@ -198,3 +198,5 @@ C:\UrMom\Coffee-to-go\obj\Debug\net6.0-windows\refint\Coffee-to-go.dll
 C:\UrMom\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.pdb
 C:\UrMom\Coffee-to-go\obj\Debug\net6.0-windows\Coffee-to-go.genruntimeconfig.cache
 C:\UrMom\Coffee-to-go\obj\Debug\net6.0-windows\ref\Coffee-to-go.dll
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\UseVoucherWindow.g.cs
+C:\Users\dansil2301\source\repos\Coffee-to-go\obj\Debug\net6.0-windows\MainUI\UseVoucherWindow.baml

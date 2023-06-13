@@ -23,13 +23,23 @@ namespace Coffee_to_go
         {
             try
             {
-                using (FileStream fs = new FileStream(pathToUsersFile, FileMode.Append))
+                List<CoffeeInf> coffees = getCoffeeHistory();
+
+                coffees.Insert(0, coffee);
+
+                using (FileStream fs = new FileStream(pathToUsersFile, FileMode.Create))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(fs, coffee);
+                    foreach (var coffe in coffees)
+                    {
+                        formatter.Serialize(fs, coffe);
+                    }
                 }
             }
-            catch (Exception ex) { throw new IOException("Couldn't add history item"); }
+            catch (Exception ex)
+            {
+                throw new IOException("Couldn't add history item", ex);
+            }
         }
 
         public List<CoffeeInf> getCoffeeHistory()

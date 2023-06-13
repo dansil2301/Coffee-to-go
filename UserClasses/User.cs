@@ -10,10 +10,12 @@ namespace Coffee_to_go
     [Serializable]
     public class User
     {
+        string adminId = "mLpijfGG6nVQxQbDCKnXxmnRq3O2";
         public string id { private set; get; }
         public string name { private set; get; }
         public string email { private set; get; }
-        public string voucherType;
+        public bool admin { private set; get; }
+        public string voucherType = "";
         public Dictionary<string, string> voucher = new Dictionary<string, string>();
 
         private int currentStreak = 0;
@@ -27,6 +29,12 @@ namespace Coffee_to_go
             id = idIn;
             name = nameIn;
             email = emailin;
+            admin = idIn == adminId ? true : false;
+        }
+
+        public override string ToString()
+        {
+            return email;
         }
 
         public void addHistory(CoffeeInf coffee)
