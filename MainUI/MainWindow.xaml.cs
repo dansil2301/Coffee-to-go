@@ -59,6 +59,7 @@ namespace Coffee_to_go
             setAdminUsersLstBox();
             setTopUsersLstBox();
             setAllHistory();
+            setAmountInAdminPanel();
         }
 
         private void showGridHideOthers(string name)
@@ -264,15 +265,24 @@ namespace Coffee_to_go
             }
         }
 
+        private void setAmountInAdminPanel()
+        {
+            AdminTotal.Text = $"Total income: {coffeeManager.GetAllTotal()}";
+            AdminMonth.Text = $"This month: {coffeeManager.GetAllTotalMonth()}";
+        }
+
         private void usersLstBx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (usersLstBx.SelectedItem == null)
-            { setAllHistory(); return; }
-
-            if (usersLstBx.SelectedItem.ToString() == "All")
-            { setAllHistory(); return; }
+            if (usersLstBx.SelectedItem == null || usersLstBx.SelectedItem.ToString() == "All")
+            { 
+                setAllHistory();
+                setAmountInAdminPanel();
+                return; 
+            }
 
             setHistoryInAdmin((User)usersLstBx.SelectedItem);
+            AdminTotal.Text = $"Total income: {coffeeManager.GetUserTotal((User)usersLstBx.SelectedItem)}";
+            AdminMonth.Text = $"This month: {coffeeManager.GetUserTotalMonth((User)usersLstBx.SelectedItem)}";
         }
 
         private void admin_Click(object sender, RoutedEventArgs e)

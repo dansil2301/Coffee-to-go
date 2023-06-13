@@ -112,7 +112,7 @@
             </StackPanel>
 
             <Grid x:Name="Account" HorizontalAlignment="Right"  VerticalAlignment="Bottom"
-                  Width="666" Height="366" Visibility="Visible">
+                  Width="666" Height="366" Visibility="Hidden">
                 <Button Height="30" Width="70" Content="Sign out" x:Name="signOut"
                             Margin="580,-320,0,0" FontSize="15" Click="exit_Click">
                     <Button.Template>
@@ -444,7 +444,7 @@
             </Grid>
 
             <Grid x:Name="Admin" HorizontalAlignment="Right"  VerticalAlignment="Bottom"
-                  Width="666" Height="366" Visibility="Hidden">
+                  Width="666" Height="366" Visibility="Visible">
 
                 <Border BorderThickness="0,0,0,0" BorderBrush="Gray" Opacity="1">
                     <ListBox x:Name="historyAdminItemsLstBx" ItemsSource="{Binding historyAdminItems}"
@@ -483,8 +483,8 @@
                           Opacity="0.50"/>
 
                 <TextBlock Text="Select user to show history:" HorizontalAlignment="Left" 
-                            VerticalAlignment="Bottom" Margin="32,0,0,85"/>
-                <ListBox Width="150" Height="50" HorizontalAlignment="Left" 
+                            VerticalAlignment="Bottom" Margin="58,0,0,85"/>
+                <ListBox Width="200" Height="50" HorizontalAlignment="Left" 
                          VerticalAlignment="Bottom" Margin="30,0,0,30" x:Name="usersLstBx" SelectionChanged="usersLstBx_SelectionChanged"/>
 
                 <StackPanel Width="150" Height="50" HorizontalAlignment="Center" 
@@ -494,11 +494,11 @@
                 </StackPanel>
 
                 <TextBlock Text="Set voucher:" HorizontalAlignment="Right" 
-                            VerticalAlignment="Bottom" Margin="0,0,70,85"/>
-                <ListBox Width="150" Height="30" HorizontalAlignment="Right" 
+                            VerticalAlignment="Bottom" Margin="0,0,95,85"/>
+                <ListBox Width="200" Height="30" HorizontalAlignment="Right" 
                          VerticalAlignment="Bottom" Margin="0,0,30,50" x:Name="BestCustomers"/>
 
-                <Button Margin="0,0,135,10" Height="30" Width="55" FontSize="15" Click="setBronze_Click"
+                <Button Margin="0,0,175,10" Height="30" Width="55" FontSize="15" Click="setBronze_Click"
                                 HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -518,7 +518,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button Margin="0,0,75,10" Height="30" Width="55" FontSize="15" Click="setSilver_Click"
+                <Button Margin="0,0,103.5,10" Height="30" Width="55" FontSize="15" Click="setSilver_Click"
                                 HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -538,7 +538,7 @@
                     </Button.Template>
                 </Button>
 
-                <Button Margin="0,0,15,10" Height="30" Width="55" FontSize="15" Click="setGold_Click"
+                <Button Margin="0,0,32,10" Height="30" Width="55" FontSize="15" Click="setGold_Click"
                                 HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
